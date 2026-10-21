@@ -2,6 +2,24 @@
 
 This is a customised version for use by Limegreentangerine for quick project setup. Forked from [`concretecms/composer`][concrete-composer-link].
 
+## Contents
+
+- [Creating a new project](#creating-a-new-project)
+- [Known issue with patcher hanging on `concretecms/dependency-patches`](#known-issue-with-patcher-hanging-on-concretecmsdependency-patches)
+- [Installing Concrete](#installing-concrete)
+- [Preinstalled LGT Packages](#preinstalled-lgt-packages)
+- [Install a Concrete package using Composer](#install-a-concrete-package-using-composer)
+- [packages.limegreentangerine.net](#packageslimegreentangerinenet)
+- [Compiling JS / CSS assets](#compiling-js--css-assets)
+  - [Hot Module Replacement](#hot-module-replacement)
+- [Creating a new theme](#creating-a-new-theme)
+- [Custom System Pages](#custom-system-pages)
+- [Svelte Components](#svelte-components)
+- [Testing](#testing)
+- [Code Formatting](#code-formatting)
+  - [Typechecking](#typechecking)
+  - [Formatting](#formatting)
+
 ## Creating a new project
 
 First choose a name for your project. In this example, our project is called "new_site"
@@ -102,6 +120,7 @@ npm run prod  # Build for production
 ```
 
 ### Hot Module Replacement
+
 Hot module replacement (hot reloading) allows you to write code and instantly see the changes in your browser, without reloading the page.
 In order to use hot reloading with Concrete, you'll want to use the `mix` and `mixAsset` helper functions to wrap your
 js and css urls. These functions make it so that your assets automatically detect hot reloading mode and output the
@@ -145,6 +164,37 @@ use function Concrete5\Composer\mix;
 <script src='<?= mix('/path/to/your/asset.js') ?>'></script>
 <link href='<?= mix('/path/to/your/asset.css') ?>' />
 ```
+
+## Creating a new theme
+
+To create a new theme layout, run the following:
+
+```bash
+$ ./vendor/bin/create-new-theme
+```
+
+This will add source `ts` and `scss` files into `/src/themes/THEME_NAME` and a theme skeleton into `/public/application/themes/THEME_NAME`. [Laravel mix](#compiling-js--css-assets) is preconfigured for this so running any of these commands will compile it.
+
+## Custom System Pages
+
+After creating a theme you may want custom 404, 403 and Maintenance pages. Run this command:
+
+```bash
+$ ./vendor/bin/install-system-pages
+```
+
+They will be added to `/public/application/views` and the site config will be updated.
+
+## Svelte Components
+
+Svelte components can be created for UI elements in blocks, elements and pages. Run:
+
+```bash
+$ ./vendor/bin/create-svelte-component
+```
+
+[Laravel mix](#compiling-js--css-assets) is preconfigured for this so running any of these commands will compile it.
+
 
 ## Testing
 
