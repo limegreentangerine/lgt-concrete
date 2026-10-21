@@ -72,7 +72,7 @@ $ composer require concretecms/sample_composer_package
 $ ./vendor/bin/concrete c5:package-install sample_composer_package
 ```
 
-***PLEASE NOTE:* If you are installing packages through composer you may want to add their folder to `/public/packages/.gitignore` to keep repo size down, these will get installed on deployment anyway.**
+***PLEASE NOTE:* If you are installing packages through composer you may want to add their folder to packages folders [`.gitignore`][link-packages-gitignore] to keep repo size down, these will get installed on deployment anyway.**
 
 ## packages.limegreentangerine.net
 
@@ -148,6 +148,7 @@ use function Concrete5\Composer\mix;
 
 [link-mix]: https://laravel.com/docs/5.5/mix
 [link-webpack-mix-file]: ./webpack.mix.js
+[link-packages-gitignore]: ./public/packages/.gitignore
 [concrete-composer-link]: https://github.com/concretecms/composer
 [classkit-link]: https://packagist.org/packages/limegreentangerine/class_kit
 [toolkit-link]: https://packagist.org/packages/limegreentangerine/lgt_toolkit
