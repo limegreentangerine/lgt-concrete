@@ -1,6 +1,6 @@
-# Composer Based Skeleton for Concrete sites
+# Composer Based Skeleton for LGT Concrete sites
 
-This is a customised versionfor use by Limegreentangerine for quick project setup.
+This is a customised version for use by Limegreentangerine for quick project setup. Forked from [`concretecms/composer`][concrete-composer-link].
 
 ## Creating a new project
 
@@ -111,17 +111,6 @@ use function Concrete5\Composer\mix;
 <link href='<?= mix('/path/to/your/asset.css') ?>' />
 ```
 
-## Free marketplace addons
-
-Do you want to install an add-on that is free in the Concrete marketplace, but not on packagist.org? Go to https://composer.concretecms.org/.
-
-[ico-version]: https://img.shields.io/packagist/v/concretecms/composer.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/concretecms/composer/master.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/concretecms/composer.svg?style=flat-square
-
-[link-packagist]: https://packagist.org/packages/concretecms/composer
-[link-travis]: https://travis-ci.org/concretecms/composer
-[link-downloads]: https://packagist.org/packages/concretecms/composer
 [link-mix]: https://laravel.com/docs/5.5/mix
 [link-webpack-mix-file]: ./webpack.mix.js
+[concrete-composer-link]: https://github.com/concretecms/composer
