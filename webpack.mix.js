@@ -58,7 +58,7 @@ mix
 
     // compile svelte components
     for (const path of svelteComponents) {
-        const source = `${path}/src/index.ts`;
+        const source = `${path}/ts/index.ts`;
         const destination = `${path}/view.js`;
         mix.ts(source, destination);
     }
