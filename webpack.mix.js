@@ -1,4 +1,6 @@
 let mix = require('laravel-mix')
+const path = require('path');
+const svelteComponents = require('./svelte-components.json');
 
 /*
  |--------------------------------------------------------------------------
@@ -52,3 +54,11 @@ mix
 
     // CSS Compilation
     .sass('resources/css/main.scss', 'public/application/css/main.css');
+
+
+    // compile svelte components
+    for (const path of svelteComponents) {
+        const source = `${path}/src/index.ts`;
+        const destination = `${path}/view.js`;
+        mix.ts(source, destination);
+    }
