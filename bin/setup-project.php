@@ -12,7 +12,7 @@ $composer = json_decode(
     JSON_THROW_ON_ERROR
 );
 
-$default = basename(str_replace('.', '-', $root));
+$default = basename(str_replace(['.local', '.'], ['', '-'], $root));
 $vendor = 'limegreentangerine';
 
 echo "\nLGT Concrete CMS Project Setup\n\n";
