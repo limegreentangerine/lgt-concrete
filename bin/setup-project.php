@@ -69,3 +69,5 @@ if (!is_dir($root . $filesDir) && !mkdir($root . $filesDir, 0755)) {
 }
 
 echo "\nProject setup complete!\n";
+
+echo "\nTo begin installation run ./vendor/bin/concrete c5:install -i\n";
