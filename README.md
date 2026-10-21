@@ -47,7 +47,7 @@ $ ./public/concrete/bin/concrete
 
 Comes with three packages installed as standard, [limegreentangerine/class_kit][classkit-link], [limegreentangerine/lgt_toolkit][toolkit-link] and [limegreentangerine/theme_kit][themekit-link].
 
-Other LGT packages are available from the [LGT Packagist][lgt-packagist-link] or our [private package repository][lgt-satis-link] *(a limegreentangerine email address is required for access)*.
+Other LGT packages are available from the [LGT Packagist][lgt-packagist-link] or our [private package repository](#packageslimegreentangerinenet).
 
 ## Install a Concrete package using composer
 
@@ -59,6 +59,21 @@ Note: You can also use composer's repository functionality to manage private pac
 $ composer require concretecms/sample_composer_package
 $ ./vendor/bin/concrete c5:package-install sample_composer_package
 ```
+
+## packages.limegreentangerine.net
+
+Private pacakges can be found at the LGT [private composer package website][lgt-satis-link] *(a limegreentangerine email address is required for web access)*. These can be installed in the normal way after some authentication headers are added to your global composer configuration.
+
+To authenticate with the private registry, configure Composer to send the Cloudflare Access service token headers for `packages.limegreentangerine.net`, you should only have to do this setup once.
+
+After obtaining the correct ID and Secret, run the following in terminal:
+
+```bash
+composer config --global custom-headers.packages.limegreentangerine.net \
+  "CF-Access-Client-Id: YOUR_CLIENT_ID" \
+  "CF-Access-Client-Secret: YOUR_CLIENT_SECRET"
+```
+
 
 ## Compiling JS / CSS assets
 This library uses [Laravel Mix][link-mix]. See [webpack.mix.js][link-webpack-mix-file].
