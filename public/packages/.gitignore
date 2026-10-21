@@ -1,0 +1,3 @@
+# for packages installed through composer add them to this gitignore
+class_kit/
+lgt_toolkit/
