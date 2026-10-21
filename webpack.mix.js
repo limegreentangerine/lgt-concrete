@@ -1,4 +1,5 @@
 let mix = require('laravel-mix')
+const fs = require('fs');
 const path = require('path');
 const svelteComponents = require('./svelte-components.json');
 
@@ -55,6 +56,28 @@ mix
     // CSS Compilation
     .sass('resources/css/main.scss', 'public/application/css/main.css');
 
+    // Theme file compilation
+    const themesDir = path.resolve(__dirname, 'src/themes');
+    if (fs.existsSync(themesDir)) {
+        for (const theme of fs.readdirSync(themesDir)) {
+            const sassSource = path.join(themesDir, theme, 'scss/site.scss');
+            const tsSource = path.join(themesDir, theme, 'ts/site.ts');
+
+            if (fs.existsSync(sassSource)) {
+                mix.sass(
+                    sassSource,
+                    path.resolve(__dirname, 'public/application/themes', theme, 'css/site.css')
+                );
+            }
+
+            if (fs.existsSync(tsSource)) {
+                mix.ts(
+                    tsSource,
+                    path.resolve(__dirname, 'public/application/themes', theme, 'js/site.js')
+                );
+            }
+        }
+    }
 
     // compile svelte components
     for (const path of svelteComponents) {

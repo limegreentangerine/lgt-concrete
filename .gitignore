@@ -19,3 +19,4 @@
 /.phpunit.*
 /public/hot
 /.php-cs-fixer.cache
+**/node_modules
