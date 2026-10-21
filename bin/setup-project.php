@@ -12,7 +12,7 @@ $composer = json_decode(
     JSON_THROW_ON_ERROR
 );
 
-$default = basename($root);
+$default = basename(str_replace('.', '-', $root));
 $vendor = 'limegreentangerine';
 
 echo "\nLGT Concrete CMS Project Setup\n\n";
@@ -61,34 +61,6 @@ echo "\nValidating Composer configuration...\n";
 
 if (!chdir($root)) {
     throw new RuntimeException('Failed to change project directory.');
-}
-
-passthru(
-    'composer validate --no-check-publish --no-interaction',
-    $exitCode
-);
-
-if ($exitCode !== 0) {
-    echo "\nValidation failed. Updating Composer lock file...\n";
-
-    passthru(
-        'composer update --lock --no-scripts --no-interaction',
-        $updateExitCode
-    );
-
-    if ($updateExitCode !== 0) {
-        throw new RuntimeException('Failed to update composer.lock.');
-    }
-
-    // Validate again after updating the lock file.
-    passthru(
-        'composer validate --no-check-publish --no-interaction',
-        $exitCode
-    );
-
-    if ($exitCode !== 0) {
-        throw new RuntimeException('Composer validation failed after updating the lock file.');
-    }
 }
 
 $filesDir = '/public/application/files';
