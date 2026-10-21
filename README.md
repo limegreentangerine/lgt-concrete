@@ -43,6 +43,12 @@ Note: You can also run the CLI tool directly with PHP
 $ ./public/concrete/bin/concrete
 ```
 
+## Preinstalled LGT Packages
+
+Comes with three packages installed as standard, [limegreentangerine/class_kit][classkit-link], [limegreentangerine/lgt_toolkit][toolkit-link] and [limegreentangerine/theme_kit][themekit-link].
+
+Other LGT packages are available from the [LGT Packagist][lgt-packagist-link] or our [private package repository][lgt-satis-link] *(a limegreentangerine email address is required for access)*.
+
 ## Install a Concrete package using composer
 
 Find the package you'd like to install on [packagist.org](https://packagist.org) (in this case [`concretecms/sample_composer_package`](https://packagist.org/packages/concretecms/sample_composer_package))
@@ -114,3 +120,8 @@ use function Concrete5\Composer\mix;
 [link-mix]: https://laravel.com/docs/5.5/mix
 [link-webpack-mix-file]: ./webpack.mix.js
 [concrete-composer-link]: https://github.com/concretecms/composer
+[classkit-link]: https://packagist.org/packages/limegreentangerine/class_kit
+[toolkit-link]: https://packagist.org/packages/limegreentangerine/lgt_toolkit
+[themekit-link]: https://packagist.org/packages/limegreentangerine/lgt_toolkit
+[lgt-packagist-link]: https://packagist.org/packages/limegreentangerine
+[lgt-satis-link]: https://packages.limegreentangerine.net
