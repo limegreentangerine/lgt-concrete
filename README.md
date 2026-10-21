@@ -12,9 +12,10 @@ This is a customised version for use by Limegreentangerine for quick project set
 - [packages.limegreentangerine.net](#packageslimegreentangerinenet)
 - [Compiling JS / CSS assets](#compiling-js--css-assets)
   - [Hot Module Replacement](#hot-module-replacement)
-- [Creating a new theme](#creating-a-new-theme)
-- [Custom System Pages](#custom-system-pages)
-- [Svelte Components](#svelte-components)
+- [Scripts](#scripts)
+  - [Creating a new theme](#creating-a-new-theme)
+  - [Custom System Pages](#custom-system-pages)
+  - [Svelte Components](#svelte-components)
 - [Testing](#testing)
 - [Code Formatting](#code-formatting)
   - [Typechecking](#typechecking)
@@ -165,7 +166,9 @@ use function Concrete5\Composer\mix;
 <link href='<?= mix('/path/to/your/asset.css') ?>' />
 ```
 
-## Creating a new theme
+## Scripts
+
+### Creating a new theme
 
 To create a new theme layout, run the following:
 
@@ -175,7 +178,7 @@ $ ./vendor/bin/create-new-theme
 
 This will add source `ts` and `scss` files into `/src/themes/THEME_NAME` and a theme skeleton into `/public/application/themes/THEME_NAME`. [Laravel mix](#compiling-js--css-assets) is preconfigured for this so running any of these commands will compile it.
 
-## Custom System Pages
+### Custom System Pages
 
 After creating a theme you may want custom 404, 403 and Maintenance pages. Run this command:
 
@@ -185,7 +188,7 @@ $ ./vendor/bin/install-system-pages
 
 They will be added to `/public/application/views` and the site config will be updated.
 
-## Svelte Components
+### Svelte Components
 
 Svelte components can be created for UI elements in blocks, elements and pages. Run:
 
