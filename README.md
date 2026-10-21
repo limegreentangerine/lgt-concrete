@@ -18,7 +18,20 @@ Note: This is a skeleton project. So once you create a project, you can install 
 
 There is an issue on Mac when composer runs concrete dependency patches.
 
-If the `concretecms/dependency-patches` hangs on install, run `brew install gpatch` then `brew link gpatch --force --overwrite` the run `composer install` again. If you've already done this before and it still hangs, the issue can also be solved by running `sudo xcodebuild -license`, agreeing to the terms, then running `composer install` again.
+If the `concretecms/dependency-patches` hangs on install, run the following:
+
+```bash
+$ brew install gpatch
+$ brew link gpatch --force --overwrite
+$ composer install
+```
+
+If you've already done this before and it still hangs, the issue can also be solved by agreeing to the `xcodebuild` terms and conditions, run:
+
+```bash
+$ sudo xcodebuild -license
+$ composer install
+```
 
 ## Installing Concrete
 
