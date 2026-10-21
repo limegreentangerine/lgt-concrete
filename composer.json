@@ -86,5 +86,11 @@
         "test": [
             "@test:unit"
         ]
-    }
+    },
+    "repositories": [
+		{
+			"type": "composer",
+			"url": "https://packages.limegreentangerine.net"
+		}
+	]
 }
