@@ -2,15 +2,16 @@
 
 $finder = PhpCsFixer\Finder::create()
     ->in([
-        __DIR__ . '/blocks',
-        __DIR__ . '/controllers',
-        __DIR__ . '/elements',
-        __DIR__ . '/single_pages',
-        __DIR__ . '/src',
+        __DIR__ . '/public/application/attributes',
+        __DIR__ . '/public/application/blocks',
+        __DIR__ . '/public/application/controllers',
+        __DIR__ . '/public/application/elements',
+        __DIR__ . '/public/application/page_templates',
+        __DIR__ . '/public/application/single_pages',
+        __DIR__ . '/public/application/src',
+        __DIR__ . '/public/application/themes',
+        __DIR__ . '/public/application/views',
         __DIR__ . '/tests'
-    ])
-    ->append([
-        __DIR__ . '/controller.php'
     ])
     ->exclude([
         'vendor',

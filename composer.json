@@ -85,7 +85,8 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "@php bin/setup-project.php"
+            "@php bin/setup-project.php",
+            "npm install --loglevel=error"
         ],
         "test:unit": "@php -d error_reporting=24575 -d display_errors=0 vendor/bin/pest",
         "test": [
@@ -94,8 +95,8 @@
         "typecheck": "./vendor/bin/phpstan analyse -c phpstan.neon --error-format=table || true",
         "format:php": "php-cs-fixer fix",
 		"format:php:check": "php-cs-fixer check --diff",
-		"format:js": "npx prettier --write .",
-		"format:js:check": "npx prettier --check .",
+		"format:js": "npx prettier --write ./public/application ./resources ./src",
+		"format:js:check": "npx prettier --check ./public/application ./resources ./src",
 		"format": [
 			"@format:php",
 			"@format:js"

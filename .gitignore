@@ -18,3 +18,4 @@
 /build
 /.phpunit.*
 /public/hot
+/.php-cs-fixer.cache

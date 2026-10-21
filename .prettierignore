@@ -1,5 +1,7 @@
-.github/
-vendor/
-build/
-var/
-tests/
+**/.github/
+**/vendor/
+**/build/
+**/var/
+**/tests/
+**/class_kit
+**/lgt_toolkit
