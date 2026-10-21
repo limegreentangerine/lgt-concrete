@@ -14,12 +14,11 @@ Now you have the latest version of Concrete and you're ready to install!
 
 Note: This is a skeleton project. So once you create a project, you can install your own VCS and change the README and all that.
 
-## Starting with the Concrete latest develop
+## Known Issue with patcher hanging on `concretecms/dependency-patches`
 
-First create a new project (the path `./` can be used to create in the current folder).
-```bash
-$ composer create-project -n concretecms/composer new_site
-```
+There is an issue on Mac when composer runs concrete dependency patches.
+
+If the `concretecms/dependency-patches` hangs on install, run `brew install gpatch` then `brew link gpatch --force --overwrite` the run `composer install` again. If you've already done this before and it still hangs, the issue can also be solved by running `sudo xcodebuild -license`, agreeing to the terms, then running `composer install` again.
 
 ## Installing Concrete
 
