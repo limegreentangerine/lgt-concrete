@@ -72,6 +72,8 @@ $ composer require concretecms/sample_composer_package
 $ ./vendor/bin/concrete c5:package-install sample_composer_package
 ```
 
+***PLEASE NOTE:* If you are installing packages through composer you may want to add their folder to `/public/packages/.gitignore` to keep repo size down, these will get installed on deployment anyway.**
+
 ## packages.limegreentangerine.net
 
 Private pacakges can be found at the LGT [private composer package website][lgt-satis-link] *(a limegreentangerine email address is required for web access)*. These can be installed in the normal way after some authentication headers are added to your global composer configuration.
