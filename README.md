@@ -64,7 +64,7 @@ $ ./vendor/bin/concrete c5:package-install sample_composer_package
 
 Private pacakges can be found at the LGT [private composer package website][lgt-satis-link] *(a limegreentangerine email address is required for web access)*. These can be installed in the normal way after some authentication headers are added to your global composer configuration.
 
-To authenticate with the private registry, configure Composer to send the Cloudflare Access service token headers for `packages.limegreentangerine.net`, you should only have to do this setup once.
+To authenticate with the private registry, configure Composer to send the Cloudflare Access service token headers for `packages.limegreentangerine.net`, you should only have to do this setup once to make it available for all future projects.
 
 After obtaining the correct ID and Secret, run the following in terminal:
 

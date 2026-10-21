@@ -15,12 +15,14 @@ $app = new Application();
  * ----------------------------------------------------------------------------
  */
 $app->detectEnvironment([
-    'local' => [
-        'hostname',
+    'mamp' => [
+        'Lees-MacBook-Pro.local',
+        'Hannahs-MacBook-Pro.local',
+        'Davids-MacBook-Pro.local'
     ],
-    'production' => [
-        'live.site',
-    ],
+    'staging' => [
+        'staging1.limegreentangerine.net'
+    ]
 ]);
 
 return $app;

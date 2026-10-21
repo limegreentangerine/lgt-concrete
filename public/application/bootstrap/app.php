@@ -1,6 +1,8 @@
 <?php
 
-/* @var Concrete\Core\Application\Application $app */
+/**
+ * @var \Concrete\Core\Application\Application $app
+ */
 /* @var Concrete\Core\Console\Application $console only set in CLI environment */
 
 /*
@@ -65,3 +67,45 @@
  *
  * ----------------------------------------------------------------------------
  */
+
+\Events::addListener('on_theme_install', function($event) use ($app) {
+    $themeName = $app->make('helper/text')->camelcase($event->getArgument('theme_handle'));
+    $pkgHandle = $event->getArgument('pkg_handle');
+
+    if ($pkgHandle) {
+        $customClass = 'Concrete\\Package\\' .
+            $app->make('helper/text')->camelcase($pkgHandle) .
+            '\\Theme\\' . $themeName . '\\PageTheme';
+    } else {
+        $applicationClass = 'Application\\Theme\\' . $themeName . '\\PageTheme';
+        $customClass = class_exists($applicationClass)
+            ? $applicationClass
+            : 'Concrete\\Theme\\' . $themeName . '\\PageTheme';
+    }
+
+    $theme = $app->make($customClass);
+    $imageMap = $theme->getThemeResponsiveImageMap();
+
+    $em = $app->make(\Doctrine\ORM\EntityManagerInterface::class);
+
+    foreach ($imageMap as $handle => $width) {
+        $type = $app->make(\Concrete\Core\File\Image\Thumbnail\Type\Type::class);
+        $type = $type->getByHandle($handle);
+        $width = (int) str_replace('px', '', $width);
+
+        if ($type == null && $width > 0) {
+            $type = new \Concrete\Core\Entity\File\Image\Thumbnail\Type\Type();
+            $type->setHandle($handle);
+            $type->setName(strtoupper($handle));
+            $type->setWidth($width);
+            $type->setHeight(null);
+            $type->setSizingMode('proportional');
+            $type->setIsUpscalingEnabled(false);
+            $type->setKeepAnimations(true);
+            $type->setSaveAreaBackgroundColor('');
+            $type->setLimitedToFileSets(false);
+            $em->persist($type);
+            $em->flush($type);
+        }
+    }
+});
