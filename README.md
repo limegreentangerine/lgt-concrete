@@ -1,16 +1,13 @@
 # Composer Based Skeleton for Concrete sites
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.txt)
-[![Build Status][ico-travis]][link-travis]
-[![Total Downloads][ico-downloads]][link-downloads]
+This is a customised versionfor use by Limegreentangerine for quick project setup.
 
 ## Creating a new project
 
-First choose a name for your project. In this example, our project is called "the_oregon_trail"
+First choose a name for your project. In this example, our project is called "new_site"
 
 ```bash
-$ composer create-project -n concretecms/composer the_oregon_trail
+$ composer create-project -n limegreentangerine/lgt-concrete new_site
 ```
 
 Now you have the latest version of Concrete and you're ready to install!
@@ -19,15 +16,9 @@ Note: This is a skeleton project. So once you create a project, you can install 
 
 ## Starting with the Concrete latest develop
 
-First create a new project
+First create a new project (the path `./` can be used to create in the current folder).
 ```bash
-$ composer create-project -n concretecms/composer the_oregon_trail
-```
-
-Then navigate into that project and require the `dev-develop` version of `concretecms/core`
-```bash
-$ cd the_oregon_trail
-$ composer require concretecms/core:dev-develop
+$ composer create-project -n concretecms/composer new_site
 ```
 
 ## Installing Concrete
@@ -35,7 +26,7 @@ $ composer require concretecms/core:dev-develop
 Navigate into your new Concrete project
 
 ```bash
-$ cd the_oregon_trail
+$ cd new_site
 ```
 
 and use the interactive install commmand that comes with Concrete's CLI tool
@@ -134,4 +125,3 @@ Do you want to install an add-on that is free in the Concrete marketplace, but n
 [link-downloads]: https://packagist.org/packages/concretecms/composer
 [link-mix]: https://laravel.com/docs/5.5/mix
 [link-webpack-mix-file]: ./webpack.mix.js
-
