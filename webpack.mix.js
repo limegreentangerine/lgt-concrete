@@ -3,14 +3,14 @@ const path = require('path');
 const svelteComponents = require('./svelte-components.json');
 
 /*
- |--------------------------------------------------------------------------
- | Mix Asset Management https://laravel-mix.com/docs/6.0/api
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for your application, as well as bundling up your JS files.
- |
+    |--------------------------------------------------------------------------
+    | Mix Asset Management https://laravel-mix.com/docs/6.0/api
+    |--------------------------------------------------------------------------
+    |
+    | Mix provides a clean, fluent API for defining some Webpack build steps
+    | for your Laravel application. By default, we are compiling the Sass
+    | file for your application, as well as bundling up your JS files.
+    |
  */
 
 mix
@@ -37,8 +37,8 @@ mix
             extensions: ['.ts', '.js', '.svelte'],
             conditionNames: ['svelte', '...'],
             alias: {
-                $libs: path.resolve(__dirname, 'build-src/libs/index.ts'),
-                $types: path.resolve(__dirname, 'build-src/types/index.ts')
+                $libs: path.resolve(__dirname, 'resources/ts/libs/index.ts'),
+                $types: path.resolve(__dirname, 'resources/ts/types/index.ts')
             }
         }
     })
