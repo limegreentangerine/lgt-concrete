@@ -146,6 +146,37 @@ use function Concrete5\Composer\mix;
 <link href='<?= mix('/path/to/your/asset.css') ?>' />
 ```
 
+## Testing
+
+Testing can be run using:
+
+```bash
+$ composer test
+```
+
+## Code Formatting
+
+### Typechecking
+
+You can check PHP types are correct by running:
+
+```bash
+$ composer typecheck
+```
+
+### Formatting
+
+Formatting for PHP and TS/JS is included, to check run:
+
+```bash
+$ composer format:check
+```
+To format run:
+
+```bash
+$ composer format
+```
+
 [link-mix]: https://laravel.com/docs/5.5/mix
 [link-webpack-mix-file]: ./webpack.mix.js
 [link-packages-gitignore]: ./public/packages/.gitignore

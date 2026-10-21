@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 define('C5_EXECUTE', true);
 define('DIR_BASE', __DIR__);
-define('DIR_BASE_CORE', __DIR__ . '/vendor/concrete5/core');
+define('DIR_BASE_CORE', __DIR__ . '/public/concrete');
 define('DIR_APPLICATION', __DIR__);
-define('DIR_CONFIG_SITE', __DIR__ . '/application/config');
+define('DIR_CONFIG_SITE', __DIR__ . '/public/application/config');
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once DIR_BASE_CORE . '/bootstrap/helpers.php';

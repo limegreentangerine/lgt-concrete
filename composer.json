@@ -87,10 +87,23 @@
         "post-create-project-cmd": [
             "@php bin/setup-project.php"
         ],
-        "test:unit": "pest",
+        "test:unit": "@php -d error_reporting=24575 -d display_errors=0 vendor/bin/pest",
         "test": [
             "@test:unit"
-        ]
+        ],
+        "typecheck": "./vendor/bin/phpstan analyse -c phpstan.neon --error-format=table || true",
+        "format:php": "php-cs-fixer fix",
+		"format:php:check": "php-cs-fixer check --diff",
+		"format:js": "npx prettier --write .",
+		"format:js:check": "npx prettier --check .",
+		"format": [
+			"@format:php",
+			"@format:js"
+		],
+		"format:check": [
+			"@format:php:check",
+			"@format:js:check"
+		]
     },
     "repositories": [
 		{

@@ -3,6 +3,12 @@ parameters:
     - phpstan-bootstrap.php
   level: 4
   paths:
+    - public/application/attributes
+    - public/application/blocks
     - public/application/controllers
+    - public/application/elements
+    - public/application/page_templates
+    - public/application/single_pages
     - public/application/src
-    - tests
+    - public/application/themes
+    - public/application/views
