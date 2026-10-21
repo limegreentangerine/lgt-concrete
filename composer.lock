@@ -5341,16 +5341,16 @@
         },
         {
             "name": "limegreentangerine/lgt_toolkit",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/limegreentangerine/LGTToolkit.git",
-                "reference": "167473e7d8cab71f19dd83a85aedfaae87cb7531"
+                "reference": "b103a1f7821804b31914f3291b028a880dbeb023"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/limegreentangerine/LGTToolkit/zipball/167473e7d8cab71f19dd83a85aedfaae87cb7531",
-                "reference": "167473e7d8cab71f19dd83a85aedfaae87cb7531",
+                "url": "https://api.github.com/repos/limegreentangerine/LGTToolkit/zipball/b103a1f7821804b31914f3291b028a880dbeb023",
+                "reference": "b103a1f7821804b31914f3291b028a880dbeb023",
                 "shasum": ""
             },
             "require": {
@@ -5364,7 +5364,6 @@
                 "phpunit/phpunit": "^11"
             },
             "bin": [
-                "bin/create-htaccess",
                 "bin/deploy-init"
             ],
             "type": "concrete5-package",
@@ -5390,9 +5389,9 @@
             "description": "LGT tools and defaults for Concrete CMS",
             "support": {
                 "issues": "https://github.com/limegreentangerine/LGTToolkit/issues",
-                "source": "https://github.com/limegreentangerine/LGTToolkit/tree/1.0.0"
+                "source": "https://github.com/limegreentangerine/LGTToolkit/tree/1.0.1"
             },
-            "time": "2026-10-19T13:34:13+00:00"
+            "time": "2026-10-21T12:53:33+00:00"
         },
         {
             "name": "limegreentangerine/theme_kit",
