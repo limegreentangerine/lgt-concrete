@@ -91,4 +91,9 @@ if ($exitCode !== 0) {
     }
 }
 
+$filesDir = '/public/application/files';
+if (!is_dir($root . $filesDir) && !mkdir($root . $filesDir, 0755)) {
+    throw new RuntimeException("Couldn't create {$filesDir} folder");
+}
+
 echo "\nProject setup complete!\n";
