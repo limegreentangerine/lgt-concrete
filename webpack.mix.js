@@ -50,6 +50,20 @@ mix
         }
     })
 
+    // Source maps in dev only
+    .sourceMaps(false, 'source-map')
+
+    // Proxy the local site (BASE_URL from .env) through BrowserSync
+    .browserSync({
+        proxy: process.env.BASE_URL,
+        files: [
+            'public/application/**/*.css',
+            'public/application/**/*.js',
+            'public/packages/**/*.css',
+            'public/packages/**/*.js'
+        ]
+    })
+
     // Simple ES6 JavaScript
     .js('resources/js/main.js', 'public/application/js/main.js')
 
