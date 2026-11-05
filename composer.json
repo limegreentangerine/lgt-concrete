@@ -104,7 +104,13 @@
 		"format:check": [
 			"@format:php:check",
 			"@format:js:check"
-		]
+		],
+        "post-install-cmd": [
+            "@php bin/update-packages-gitignore.php"
+        ],
+        "post-update-cmd": [
+            "@php bin/update-packages-gitignore.php"
+        ]
     },
     "repositories": [
 		{
