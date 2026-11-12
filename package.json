@@ -1,5 +1,5 @@
 {
-  "node": ">=22.11",
+  "node": ">=24.15",
   "scripts": {
     "start": "mix watch",
     "dev": "mix",
