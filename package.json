@@ -1,6 +1,7 @@
 {
-  "node": ">=22.11",
+  "node": ">=24.15",
   "scripts": {
+    "start": "mix watch",
     "dev": "mix",
     "watch": "mix watch",
     "watch-poll": "mix watch -- --watch-options-poll=1000",
