@@ -68,6 +68,24 @@ if (!is_dir($root . $filesDir) && !mkdir($root . $filesDir, 0755)) {
     throw new RuntimeException("Couldn't create {$filesDir} folder");
 }
 
+do {
+    echo 'SMTP Mail Username: ';
+    $smtpUsername = trim((string) fgets(STDIN));
+    $isValidUsername = strlen($smtpUsername) > 0;
+    if (!$isValidUsername) {
+        echo "Enter a SMTP mail username." . PHP_EOL;
+    }
+} while (!$isValidUsername);
+
+do {
+    echo 'SMTP Mail Password: ';
+    $smtpPassword = trim((string) fgets(STDIN));
+    $isValidPassword = strlen($smtpPassword) > 0;
+    if (!$isValidPassword) {
+        echo "Enter a SMTP mail password." . PHP_EOL;
+    }
+} while (!$isValidPassword);
+
 echo "\nProject setup complete!\n";
 
 echo "\nTo begin installation run ./vendor/bin/concrete c5:install -i\n";
