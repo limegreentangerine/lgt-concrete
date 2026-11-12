@@ -68,6 +68,71 @@ if (!is_dir($root . $filesDir) && !mkdir($root . $filesDir, 0755)) {
     throw new RuntimeException("Couldn't create {$filesDir} folder");
 }
 
+do {
+    echo 'SMTP Mail Username: ';
+    $smtpUsername = trim((string) fgets(STDIN));
+    $isValidUsername = strlen($smtpUsername) > 0;
+    if (!$isValidUsername) {
+        echo "Enter a SMTP mail username." . PHP_EOL;
+    }
+} while (!$isValidUsername);
+
+do {
+    echo 'SMTP Mail Password: ';
+    $smtpPassword = trim((string) fgets(STDIN));
+    $isValidPassword = strlen($smtpPassword) > 0;
+    if (!$isValidPassword) {
+        echo "Enter a SMTP mail password." . PHP_EOL;
+    }
+} while (!$isValidPassword);
+
+$envFile = $root . '/.env';
+$envFileExists = file_exists($envFile);
+$envContents = '';
+if ($envFileExists) {
+    $envContents = file_get_contents($envFile);
+    if ($envContents === false) {
+        throw new RuntimeException('Failed to read .env file.');
+    }
+}
+
+$envValues = [
+    'MAIL_USERNAME' => $smtpUsername,
+    'MAIL_PASSWORD' => $smtpPassword,
+];
+$formatEnvValue = static fn(string $value): string => "'" . str_replace("'", "'\"'\"'", $value) . "'";
+$foundEnvValues = array_fill_keys(array_keys($envValues), false);
+$envLines = preg_split('/(\r\n|\n|\r)/', $envContents, -1, PREG_SPLIT_DELIM_CAPTURE);
+
+for ($i = 0; $i < count($envLines); $i += 2) {
+    foreach ($envValues as $key => $value) {
+        if (preg_match('/^([ \t]*(?:export[ \t]+)?' . $key . '[ \t]*=)/', $envLines[$i], $matches) === 1) {
+            $envLines[$i] = $matches[1] . $formatEnvValue($value);
+            $foundEnvValues[$key] = true;
+        }
+    }
+}
+
+$envContents = implode('', $envLines);
+$lineEnding = str_contains($envContents, "\r\n") ? "\r\n" : "\n";
+if ($envContents !== '' && !preg_match('/(?:\r\n|\n|\r)$/', $envContents)) {
+    $envContents .= $lineEnding;
+}
+
+foreach ($envValues as $key => $value) {
+    if (!$foundEnvValues[$key]) {
+        $envContents .= $key . '=' . $formatEnvValue($value) . $lineEnding;
+    }
+}
+
+if (file_put_contents($envFile, $envContents, LOCK_EX) === false) {
+    throw new RuntimeException('Failed to write .env file.');
+}
+
+if (!$envFileExists && !chmod($envFile, 0600)) {
+    throw new RuntimeException('Failed to secure .env file permissions.');
+}
+
 echo "\nProject setup complete!\n";
 
 echo "\nTo begin installation run ./vendor/bin/concrete c5:install -i\n";
