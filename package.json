@@ -1,4 +1,5 @@
 {
+  "node": ">=22.11",
   "scripts": {
     "dev": "mix",
     "watch": "mix watch",
