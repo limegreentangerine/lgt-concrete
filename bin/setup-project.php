@@ -70,21 +70,33 @@ if (!is_dir($root . $filesDir) && !mkdir($root . $filesDir, 0755)) {
 
 do {
     echo 'SMTP Mail Username: ';
-    $smtpUsername = trim((string) fgets(STDIN));
-    $isValidUsername = strlen($smtpUsername) > 0;
-    if (!$isValidUsername) {
+
+    $line = fgets(STDIN);
+    $smtpUsername = $line === false ? '' : trim($line);
+    $isValidStmpUsername = strlen($smtpUsername) > 0;
+
+    if (!$isValidStmpUsername) {
+        if ($line === false) {
+            throw new RuntimeException('No input provided for SMTP mail username.');
+        }
         echo "Enter a SMTP mail username." . PHP_EOL;
     }
-} while (!$isValidUsername);
+} while (!$isValidStmpUsername);
 
 do {
     echo 'SMTP Mail Password: ';
-    $smtpPassword = trim((string) fgets(STDIN));
-    $isValidPassword = strlen($smtpPassword) > 0;
-    if (!$isValidPassword) {
+
+    $line = fgets(STDIN);
+    $smtpPassword = $line === false ? '' : trim($line);
+    $isValidSmtpPassword = strlen($smtpPassword) > 0;
+
+    if (!$isValidSmtpPassword) {
+        if ($line === false) {
+            throw new RuntimeException('No input provided for SMTP mail password.');
+        }
         echo "Enter a SMTP mail password." . PHP_EOL;
     }
-} while (!$isValidPassword);
+} while (!$isValidSmtpPassword);
 
 $envFile = $root . '/.env';
 $envFileExists = file_exists($envFile);
