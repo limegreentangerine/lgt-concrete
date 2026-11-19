@@ -168,12 +168,6 @@ return [
             ],
         ],
     ],
-    'user' => [
-        'registration' => [
-            'email_registration' => true,
-            'display_username_field' => false,
-        ],
-    ],
     'mail' => [
         'method' => 'smtp',
         'methods' => [
