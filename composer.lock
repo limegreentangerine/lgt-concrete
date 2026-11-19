@@ -5291,16 +5291,16 @@
         },
         {
             "name": "limegreentangerine/class_kit",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/limegreentangerine/ClassKit.git",
-                "reference": "b9e3c9a0f36c0325d45ed493f81aa5afcef177ff"
+                "reference": "318aee48c660d4a685265f601e5d6c6f9be7a206"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/limegreentangerine/ClassKit/zipball/b9e3c9a0f36c0325d45ed493f81aa5afcef177ff",
-                "reference": "b9e3c9a0f36c0325d45ed493f81aa5afcef177ff",
+                "url": "https://api.github.com/repos/limegreentangerine/ClassKit/zipball/318aee48c660d4a685265f601e5d6c6f9be7a206",
+                "reference": "318aee48c660d4a685265f601e5d6c6f9be7a206",
                 "shasum": ""
             },
             "require-dev": {
@@ -5335,22 +5335,22 @@
             "description": "Collection of helper classes for LGT packages.",
             "support": {
                 "issues": "https://github.com/limegreentangerine/ClassKit/issues",
-                "source": "https://github.com/limegreentangerine/ClassKit/tree/2.0.2"
+                "source": "https://github.com/limegreentangerine/ClassKit/tree/2.0.3"
             },
-            "time": "2026-10-21T13:10:39+00:00"
+            "time": "2026-11-04T11:22:22+00:00"
         },
         {
             "name": "limegreentangerine/lgt_toolkit",
-            "version": "1.0.2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/limegreentangerine/LGTToolkit.git",
-                "reference": "835edb57552d5372fc305a7f98e7bd4feadcc351"
+                "reference": "f6372223e62fac4fed8f1b81e144c5541de52dd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/limegreentangerine/LGTToolkit/zipball/835edb57552d5372fc305a7f98e7bd4feadcc351",
-                "reference": "835edb57552d5372fc305a7f98e7bd4feadcc351",
+                "url": "https://api.github.com/repos/limegreentangerine/LGTToolkit/zipball/f6372223e62fac4fed8f1b81e144c5541de52dd3",
+                "reference": "f6372223e62fac4fed8f1b81e144c5541de52dd3",
                 "shasum": ""
             },
             "require": {
@@ -5389,22 +5389,22 @@
             "description": "LGT tools and defaults for Concrete CMS",
             "support": {
                 "issues": "https://github.com/limegreentangerine/LGTToolkit/issues",
-                "source": "https://github.com/limegreentangerine/LGTToolkit/tree/1.0.2"
+                "source": "https://github.com/limegreentangerine/LGTToolkit/tree/1.1.0"
             },
-            "time": "2026-10-21T13:14:14+00:00"
+            "time": "2026-11-12T10:54:05+00:00"
         },
         {
             "name": "limegreentangerine/theme_kit",
-            "version": "1.0.9",
+            "version": "1.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/limegreentangerine/ThemeKit.git",
-                "reference": "d8911eb805ba3d94b11e59e2f967e85b25bff657"
+                "reference": "7bf6009852cb37cf26989c4e28f6e5604b168b61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/limegreentangerine/ThemeKit/zipball/d8911eb805ba3d94b11e59e2f967e85b25bff657",
-                "reference": "d8911eb805ba3d94b11e59e2f967e85b25bff657",
+                "url": "https://api.github.com/repos/limegreentangerine/ThemeKit/zipball/7bf6009852cb37cf26989c4e28f6e5604b168b61",
+                "reference": "7bf6009852cb37cf26989c4e28f6e5604b168b61",
                 "shasum": ""
             },
             "require": {
@@ -5440,9 +5440,9 @@
             "description": "Theme building tools.",
             "support": {
                 "issues": "https://github.com/limegreentangerine/ThemeKit/issues",
-                "source": "https://github.com/limegreentangerine/ThemeKit/tree/1.0.9"
+                "source": "https://github.com/limegreentangerine/ThemeKit/tree/1.0.13"
             },
-            "time": "2026-10-21T13:16:09+00:00"
+            "time": "2026-11-10T11:18:30+00:00"
         },
         {
             "name": "lusitanian/oauth",
