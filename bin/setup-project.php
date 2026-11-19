@@ -68,36 +68,6 @@ if (!is_dir($root . $filesDir) && !mkdir($root . $filesDir, 0755)) {
     throw new RuntimeException("Couldn't create {$filesDir} folder");
 }
 
-do {
-    echo 'SMTP Mail Username: ';
-
-    $line = fgets(STDIN);
-    $smtpUsername = $line === false ? '' : trim($line);
-    $isValidStmpUsername = strlen($smtpUsername) > 0;
-
-    if (!$isValidStmpUsername) {
-        if ($line === false) {
-            throw new RuntimeException('No input provided for SMTP mail username.');
-        }
-        echo "Enter a SMTP mail username." . PHP_EOL;
-    }
-} while (!$isValidStmpUsername);
-
-do {
-    echo 'SMTP Mail Password: ';
-
-    $line = fgets(STDIN);
-    $smtpPassword = $line === false ? '' : trim($line);
-    $isValidSmtpPassword = strlen($smtpPassword) > 0;
-
-    if (!$isValidSmtpPassword) {
-        if ($line === false) {
-            throw new RuntimeException('No input provided for SMTP mail password.');
-        }
-        echo "Enter a SMTP mail password." . PHP_EOL;
-    }
-} while (!$isValidSmtpPassword);
-
 $envFile = $root . '/.env';
 $envFileExists = file_exists($envFile);
 $envContents = '';
@@ -109,8 +79,8 @@ if ($envFileExists) {
 }
 
 $envValues = [
-    'MAIL_USERNAME' => $smtpUsername,
-    'MAIL_PASSWORD' => $smtpPassword,
+    'MAIL_USERNAME' => $smtpUsername ?? '',
+    'MAIL_PASSWORD' => $smtpPassword ?? '',
 ];
 $formatEnvValue = static fn(string $value): string => "'" . str_replace("'", "'\"'\"'", $value) . "'";
 $foundEnvValues = array_fill_keys(array_keys($envValues), false);
@@ -146,5 +116,5 @@ if (!$envFileExists && !chmod($envFile, 0600)) {
 }
 
 echo "\nProject setup complete!\n";
-
+echo "\nEnter a SMTP mail username and password in .env file.\n";
 echo "\nTo begin installation run ./vendor/bin/concrete c5:install -i\n";
