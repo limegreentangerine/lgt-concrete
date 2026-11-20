@@ -1,5 +1,6 @@
 # Ignore Composer stuff
 /vendor/
+/tools/deployer/vendor/
 
 # Ignore Concrete stuff
 /public/concrete

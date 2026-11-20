@@ -1,0 +1,9 @@
+#!/bin/sh
+
+deployer="$(dirname "$0")/../tools/deployer/vendor/bin/dep"
+if [ ! -x "$deployer" ]; then
+    echo "Deployer is not installed. Run: composer install --working-dir=tools/deployer" >&2
+    exit 1
+fi
+
+exec "$deployer" "$@"
