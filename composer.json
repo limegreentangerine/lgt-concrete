@@ -111,11 +111,5 @@
         "post-update-cmd": [
             "@php bin/update-packages-gitignore.php"
         ]
-    },
-    "repositories": [
-		{
-			"type": "composer",
-			"url": "https://packages.limegreentangerine.net"
-		}
-	]
+    }
 }
